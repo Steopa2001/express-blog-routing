@@ -1,6 +1,6 @@
 ## ESERCIZIO
 
- Creare un file di routing (routers/posts.js) che conterrà le rotte necessario per l'entità post.
+ Creare un file di routing (routers/posts.js) che conterrà le rotte necessarie per l'entità post.
  
  All'interno creare le rotte per le operazioni CRUD (Index, Show, Create, Update e Delete)
  
