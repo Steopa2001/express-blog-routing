@@ -1,6 +1,6 @@
 // Importo exxpress
 const express = require('express');
-const router = express.router();
+const router = express.Router();
 
 // GET /posts → mostra tutti i post
 router.get("/", (req, res) => {

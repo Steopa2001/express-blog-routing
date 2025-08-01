@@ -16,6 +16,14 @@ app.get('/', (req, res) => {
 //importo l'array posts
 const posts = require('./posts');
 
+// Importo il router dei post
+const postRouter = require('./routers/posts');
+
+// Registro il router con il prefisso /posts
+app.use('/posts', postRouter);
+
+
+
 //creo rotta /bacheca
 app.get('/bacheca', (req, res) => {
     //restituisco oggetto json
