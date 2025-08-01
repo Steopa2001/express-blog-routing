@@ -2,14 +2,26 @@
 const express = require('express');
 const router = express.Router();
 
-// GET /posts → mostra tutti i post
+//importo array posts
+const posts = require('../data/posts.js');
+
+
+// GET /posts → restituisce tutti i post in JSON
 router.get("/", (req, res) => {
-  res.send("Lista dei post");
+  res.json(posts);
 });
 
-// GET /posts/:id → mostra un singolo post
+// GET /posts/:id → restituisce il singolo post in JSON
 router.get("/:id", (req, res) => {
-  res.send(`Visualizzazione del post ${req.params.id}`);
+  const id = parseInt(req.params.id);
+  const post = posts.find(p => p.id === id);
+
+  //ritorno il messaggio "Post non trovato" se inserisco id che non c'è
+  if (!post) {
+    return res.status(404).json({ message: "Post non trovato" });
+  }
+
+  res.json(post);
 });
 
 // POST /posts → crea un nuovo post
