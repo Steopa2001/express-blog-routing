@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 const posts = require('./posts');
 
 // Importo il router dei post
-const postRouter = require('./routers/posts');
+const postRouter = require('./routers/routerPosts');
 
 // Registro il router con il prefisso /posts
 app.use('/posts', postRouter);
